@@ -26,19 +26,28 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
 
-
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-
+        it('each feed has a url', function(){
+          allFeeds.forEach(function(feed){
+            expect(feed.url).toBeDefined();
+            expect(feed.url.length).not.toBe(0);
+          });
+        });
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+        it('each feed has a name', function(){
+          allFeeds.forEach(function(feed){
+            expect(feed.name).toBeDefined();
+            expect(feed.name.length).not.toBe(0);
+          });
+        });
     });
-
 
     /* TODO: Write a new test suite named "The menu" */
 
