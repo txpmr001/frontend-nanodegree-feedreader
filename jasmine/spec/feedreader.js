@@ -85,6 +85,7 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
+        /* make sure that feed 0 is defined before loading */
         it('feed 0 is defined with a name and url', function() {
             expect(allFeeds[0]).toBeDefined();
             expect(allFeeds[0].url).toBeDefined();
@@ -95,6 +96,7 @@ $(function() {
 
         describe('feed 0 entries', function() {
 
+            /* load feed 0 asynchronously before checking for entries */
             beforeAll(function(done) {
               loadFeed(0, function() {
                 done();
@@ -117,6 +119,7 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
+        /* make sure that feed 0 is defined before loading */
         it('feed 0 is defined with a name and url', function() {
             expect(allFeeds[0]).toBeDefined();
             expect(allFeeds[0].url).toBeDefined();
@@ -125,6 +128,7 @@ $(function() {
             expect(allFeeds[0].name.length).not.toBe(0);
         });
 
+        /* make sure that feed 1 is defined before loading */
         it('feed 1 is defined with a name and url', function() {
             expect(allFeeds[1]).toBeDefined();
             expect(allFeeds[1].url).toBeDefined();
@@ -135,6 +139,7 @@ $(function() {
 
         describe('loading feed 0 followed by loading feed 1', function() {
 
+            /* asynchronously load feed 0 and feed 1, save entries for both */
             beforeAll(function(done) {
               links0 = [];
               links1 = [];
@@ -151,8 +156,9 @@ $(function() {
               });
             });
     
+            /* comapre entries for feed 0 and feed 1 */
             it('changes feed content', function() {
-              // log both link arrays here to verify beforeAll functionality
+              // log both entry arrays here to verify beforeAll functionality
               // console.log('links0 = ', links0);
               // console.log('links1 = ', links1);
               expect(links1).not.toEqual(links0);
