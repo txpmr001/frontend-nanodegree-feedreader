@@ -84,48 +84,79 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-        beforeEach(function(done) {
-          loadFeed(0, function() {
-            done();
-          });
+
+        it('feed 0 is defined with a name and url', function() {
+            expect(allFeeds[0]).toBeDefined();
+            expect(allFeeds[0].url).toBeDefined();
+            expect(allFeeds[0].url.length).not.toBe(0);
+            expect(allFeeds[0].name).toBeDefined();
+            expect(allFeeds[0].name.length).not.toBe(0);
         });
 
-        it('are loaded', function(){
-          var numEntryLinks = $(".feed").children(".entry-link").length;
-          expect(numEntryLinks).not.toBe(0);
+        describe('feed 0 entries', function() {
+
+            beforeAll(function(done) {
+              loadFeed(0, function() {
+                done();
+              });
+            });
+    
+            it('are loaded', function(){
+              var numEntryLinks = $(".feed").children(".entry-link").length;
+              expect(numEntryLinks).not.toBe(0);
+            });
         });
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
         var links0, links1;
-
+        
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-        it('requires 2 or more feeds', function() {
-          expect(allFeeds.length).toBeGreaterThan(1);
+
+        it('feed 0 is defined with a name and url', function() {
+            expect(allFeeds[0]).toBeDefined();
+            expect(allFeeds[0].url).toBeDefined();
+            expect(allFeeds[0].url.length).not.toBe(0);
+            expect(allFeeds[0].name).toBeDefined();
+            expect(allFeeds[0].name.length).not.toBe(0);
         });
 
-        beforeEach(function(done) {
-          loadFeed(0, function() {
-            links0 = [];
-            $(".feed").children(".entry-link").each(function() {
-              links0.push($(this).attr('href'));
-            });
-            loadFeed(1, function() {
+        it('feed 1 is defined with a name and url', function() {
+            expect(allFeeds[1]).toBeDefined();
+            expect(allFeeds[1].url).toBeDefined();
+            expect(allFeeds[1].url.length).not.toBe(0);
+            expect(allFeeds[1].name).toBeDefined();
+            expect(allFeeds[1].name.length).not.toBe(0);
+        });
+
+        describe('loading feed 0 followed by loading feed 1', function() {
+
+            beforeAll(function(done) {
+              links0 = [];
               links1 = [];
-              $(".feed").children(".entry-link").each(function() {
-                links1.push($(this).attr('href'));
+              loadFeed(0, function() {
+                $(".feed").children(".entry-link").each(function() {
+                  links0.push($(this).attr('href'));
+                });
+                loadFeed(1, function() {
+                  $(".feed").children(".entry-link").each(function() {
+                    links1.push($(this).attr('href'));
+                  });
+                  done();
+                });
               });
-              done();
             });
-          });
-        });
-
-        it('changes feed content', function() {
-          expect(links1).not.toEqual(links0);
+    
+            it('changes feed content', function() {
+              // log both link arrays here to verify beforeAll functionality
+              // console.log('links0 = ', links0);
+              // console.log('links1 = ', links1);
+              expect(links1).not.toEqual(links0);
+            });
         });
     });
 }());
