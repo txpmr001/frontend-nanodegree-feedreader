@@ -1,4 +1,28 @@
-# Project Overview
+## Feed Reader Testing Project
+This application can be executed from the github project page here:
+
+<a href="http://txpmr001.github.io/frontend-nanodegree-feedreader/">http://txpmr001.github.io/frontend-nanodegree-feedreader/</a>
+
+The github repository for this project is here:
+
+<a href='https://github.com/txpmr001/frontend-nanodegree-feedreader'>https://github.com/txpmr001/frontend-nanodegree-feedreader</a>
+
+
+#### Project Notes
+The purpose of this project is to create a series of tests to verify the functionality of a pre-existing web application. Tests in this project are created with the <a href='https://jasmine.github.io/2.2/introduction'>Jasmine</a> framework.
+
+
+Jasmine elements used in this project include:
+
+  1. Suites, specs, and expectations with chained matchers.
+  2.  Nested blocks.
+  3. Setup using the beforeAll function.
+  4. Asynchronous operations using callbacks and the done function.
+
+
+## Original Project Instructions
+
+## Project Overview
 
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
 
@@ -20,8 +44,7 @@ You will learn how to use Jasmine to write a number of tests against a pre-exist
 * Writing effective tests requires analyzing multiple aspects of an application including the HTML, CSS and JavaScript - an extremely important skill when changing teams or joining a new company.
 * Good tests give you the ability to quickly analyze whether new code breaks an existing feature within your codebase, without having to manually test all of the functionality.
 
-
-# How will I complete this project?
+## How will I complete this project?
 
 Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/projects/3442558598/rubric)
 
@@ -46,3 +69,6 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 19. Implement error handling for undefined variables and out-of-bound array access.
 20. When complete - all of your tests should pass. 
 21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
+
+
+> Written with [StackEdit](https://stackedit.io/).
