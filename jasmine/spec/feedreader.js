@@ -98,7 +98,7 @@ $(function() {
         describe('feed 0 entries', function() {
 
             // load feed 0 asynchronously before checking for entries
-            beforeAll(function(done) {
+            beforeEach(function(done) {
               loadFeed(0, function() {
                 done();
               });
@@ -141,7 +141,7 @@ $(function() {
         describe('loading feed 0 followed by loading feed 1', function() {
 
             // asynchronously load feed 0 and feed 1, save entries for both
-            beforeAll(function(done) {
+            beforeEach(function(done) {
               links0 = [];
               links1 = [];
               loadFeed(0, function() {
@@ -159,9 +159,9 @@ $(function() {
     
             // compare entries for feed 0 and feed 1
             it('changes feed content', function() {
-              // log both entry arrays here to verify beforeAll functionality
-              console.log('links0 = ', links0);
-              console.log('links1 = ', links1);
+              // log both entry arrays here to verify beforeEach functionality
+              // console.log('links0 = ', links0);
+              // console.log('links1 = ', links1);
               expect(links1).not.toEqual(links0);
             });
         });
