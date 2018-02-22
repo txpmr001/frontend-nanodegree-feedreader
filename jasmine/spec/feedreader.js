@@ -105,7 +105,7 @@ $(function() {
             });
     
             it('are loaded', function(){
-              var numEntryLinks = $(".feed").children(".entry-link").length;
+              var numEntryLinks = $(".feed .entry-link").length;
               expect(numEntryLinks).not.toBe(0);
             });
         });
@@ -145,11 +145,11 @@ $(function() {
               links0 = [];
               links1 = [];
               loadFeed(0, function() {
-                $(".feed").children(".entry-link").each(function() {
+                $(".feed .entry-link").each(function() {
                   links0.push($(this).attr('href'));
                 });
                 loadFeed(1, function() {
-                  $(".feed").children(".entry-link").each(function() {
+                  $(".feed .entry-link").each(function() {
                     links1.push($(this).attr('href'));
                   });
                   done();
@@ -157,11 +157,11 @@ $(function() {
               });
             });
     
-            // comapre entries for feed 0 and feed 1
+            // compare entries for feed 0 and feed 1
             it('changes feed content', function() {
               // log both entry arrays here to verify beforeAll functionality
-              // console.log('links0 = ', links0);
-              // console.log('links1 = ', links1);
+              console.log('links0 = ', links0);
+              console.log('links1 = ', links1);
               expect(links1).not.toEqual(links0);
             });
         });
