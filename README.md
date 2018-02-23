@@ -10,7 +10,7 @@ The github repository for this project is here:
 #### Application Notes
 This simple html / javascript web application is part of a <a href='https://www.udacity.com'>Udacity</a> project to learn about application testing. The application provides a menu to select from a list of RSS feeds, and after a feed is selected,  it displays a list of links to relevant articles. The project also contains version 2.1.2 of the <a href='https://jasmine.github.io'>Jasmine</a> testing framework and a series of test specifications designed to verify the functionality of the application. 
 
-After downloading or cloning this repository, the application can be run by loading file ***index.html***  The main javascript for the application is contained in file ***js/app.js***, and the jasmine test specifications are contained in file ***jasmine/spec/feedreader.js***.
+After downloading or cloning this repository, the application can be run by loading file ***index.html***.  The main javascript for the application is contained in file ***js/app.js***, and the jasmine test specifications are contained in file ***jasmine/spec/feedreader.js***.
 
 #### Project Notes
 
