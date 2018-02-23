@@ -78,8 +78,9 @@ $(function() {
         /* Test to ensure that loadFeed created entries.
          */
         it('entries are loaded', function(){
-          var numEntries = $(".feed .entry").length;
-          expect(numEntries).not.toBe(0);
+          var numEntryLinks = $(".feed .entry-link").length;
+          console.log('numEntryLinks = ' + numEntryLinks.toString());
+          expect(numEntryLinks).not.toBe(0);
         });
     });
 
