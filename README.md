@@ -1,5 +1,5 @@
 ## Feed Reader Testing Project
-This application can be executed from the github project page here:
+This application is hosted on a  github project page here:
 
 <a href="http://txpmr001.github.io/frontend-nanodegree-feedreader/">http://txpmr001.github.io/frontend-nanodegree-feedreader/</a>
 
@@ -7,18 +7,18 @@ The github repository for this project is here:
 
 <a href='https://github.com/txpmr001/frontend-nanodegree-feedreader'>https://github.com/txpmr001/frontend-nanodegree-feedreader</a>
 
+#### Application Notes
+This simple html / javascript web application is part of a <a href='https://www.udacity.com'>Udacity</a> project to learn about application testing. The application provides a menu to select from a list of RSS feeds, and after a feed is selected,  it displays a list of links to relevant articles. The project also contains version 2.1.2 of the <a href='https://jasmine.github.io'>Jasmine</a> testing framework and a series of test specifications designed to verify the functionality of the application. 
+
+After downloading or cloning this repository, the application can be run by loading file ***index.html***  The main javascript for the application is contained in file ***js/app.js***, and the jasmine test specifications are contained in file ***jasmine/spec/feedreader.js***.
 
 #### Project Notes
-The purpose of this project is to create a series of tests to verify the functionality of a pre-existing web application. Tests in this project are created with the <a href='https://jasmine.github.io/2.2/introduction'>Jasmine</a> framework.
 
-
-Jasmine elements used in this project include:
+<a href='https://jasmine.github.io'>Jasmine</a> elements used in this project include:
 
   1. Suites, specs, and expectations with chained matchers.
-  2.  Nested blocks.
-  3. Setup using the beforeAll function.
-  4. Asynchronous operations using callbacks and the done function.
-
+  2. Setup using the beforeEach function.
+  3. Asynchronous operations using callbacks and the done function.
 
 ## Original Project Instructions
 
