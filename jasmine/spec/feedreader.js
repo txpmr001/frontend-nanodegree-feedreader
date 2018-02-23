@@ -78,30 +78,29 @@ $(function() {
         /* Test to ensure that loadFeed created entries.
          */
         it('entries are loaded', function(){
-          var numEntryLinks = $(".feed .entry-link").length;
-          console.log('numEntryLinks = ' + numEntryLinks.toString());
-          expect(numEntryLinks).not.toBe(0);
+          var numEntries = $(".feed .entry").length;
+          expect(numEntries).not.toBe(0);
         });
     });
 
     /* Check feed selection functionality.
      */
     describe('New Feed Selection', function() {
-        var links0, links1; // to save asynchronously loaded entry links
+        var entries0, entries1; // to save asynchronously loaded entries
 
-        /* Asynchronously load feed 0 followed by feed 1 and save the entry links
+        /* Asynchronously load feed 0 followed by feed 1 and save the entries
          * for both feeds.
          */
         beforeEach(function(done) {
-          links0 = [];
-          links1 = [];
+          entries0 = [];
+          entries1 = [];
           loadFeed(0, function() {
-            $(".feed .entry-link").each(function() {
-              links0.push($(this).attr('href'));
+            $(".feed .entry h2").each(function() {
+              entries0.push($(this).text());
             });
             loadFeed(1, function() {
-              $(".feed .entry-link").each(function() {
-                links1.push($(this).attr('href'));
+              $(".feed .entry h2").each(function() {
+                entries1.push($(this).text());
               });
               done();
             });
@@ -109,13 +108,13 @@ $(function() {
         });
     
         /* Test to ensure that loading a new feed changes entries by
-         * comparing the saved entry links for feed 0 and feed 1
+         * comparing the saved entries for feed 0 and feed 1
          */ 
         it('selection changes feed content', function() {
           // log both entry arrays here to verify beforeEach functionality
-          // console.log('links0 = ', links0);
-          // console.log('links1 = ', links1);
-          expect(links1).not.toEqual(links0);
+          // console.log('entries0 = ', entries0);
+          // console.log('entries1 = ', entries1);
+          expect(entries1).not.toEqual(entries0);
         });
     });
 }());
